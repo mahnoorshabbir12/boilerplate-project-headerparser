@@ -25,7 +25,7 @@ app.get('/api/hello', function (req, res) {
 });
 app.get("/api/whoami", function(req,res){
   // let ipaddress, language, software ;
-  res.json({ipaddress: req.header.ip, language : req.header.Accept-Language, software : User-Agent})
+  res.json({ipaddress: req.ip, language : req.headers["accept-language"], software : req.headers["user-agent"]})
 });
 console.log("Data sent successfully..");
 
