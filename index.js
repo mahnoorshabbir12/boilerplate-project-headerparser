@@ -23,6 +23,11 @@ app.get('/', function (req, res) {
 app.get('/api/hello', function (req, res) {
   res.json({ greeting: 'hello API' });
 });
+app.get("/api/whoami", function(req,res){
+  // let ipaddress, language, software ;
+  res.json({ipaddress: req.header.ip, language : req.header.Accept-Language, software : User-Agent})
+});
+console.log("Data sent successfully..");
 
 // listen for requests :)
 var listener = app.listen(process.env.PORT || 3000, function () {
